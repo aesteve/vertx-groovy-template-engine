@@ -45,6 +45,19 @@ class GStringTemplateEngineImpl extends CachingTemplateEngine<Template>, Templat
         }
     }
 
+    @Override
+    void render(io.vertx.groovy.ext.web.RoutingContext context, String templateFileName, Handler<AsyncResult<io.vertx.groovy.core.buffer.Buffer>> handler) {
+        render(context.delegate as RoutingContext, templateFileName, { result ->
+            if (result.succeeded()) {
+                Buffer buff = result.result()
+                io.vertx.groovy.core.buffer.Buffer groovyBuffer = new io.vertx.groovy.core.buffer.Buffer(buff)
+                handler.handle(Future.succeededFuture(groovyBuffer))
+            } else {
+                handler.handle(Future.failedFuture(result.cause()))
+            }
+        })
+    }
+
     private
     static void renderTemplate(RoutingContext context, Template template, Handler<AsyncResult<Buffer>> handler) {
         try {
