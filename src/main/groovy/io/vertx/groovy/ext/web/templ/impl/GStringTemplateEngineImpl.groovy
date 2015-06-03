@@ -17,9 +17,9 @@ import io.vertx.groovy.ext.web.templ.TemplateEngine
 @TypeChecked
 class GStringTemplateEngineImpl extends CachingTemplateEngine<Template>, TemplateEngine {
 
-	GStringTemplateEngine engine
+    GStringTemplateEngine engine
 
-	public GStringTemplateEngineImpl() {
+    public GStringTemplateEngineImpl() {
         super(GroovyTemplateEngine.DEFAULT_TEMPLATE_EXTENSION, GroovyTemplateEngine.DEFAULT_MAX_CACHE_SIZE)
         this.engine = new GStringTemplateEngine(Utils.getClassLoader())
     }
