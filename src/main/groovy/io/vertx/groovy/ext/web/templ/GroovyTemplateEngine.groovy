@@ -18,7 +18,7 @@ class GroovyTemplateEngine {
         if (!impl) {
             return null
         }
-        impl.newInstance(engine)
+        impl.newInstance()
     }
 
     static TemplateEngine create(Class<? extends groovy.text.TemplateEngine> clazz) {
