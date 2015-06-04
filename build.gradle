@@ -12,10 +12,10 @@ repositories {
 
 dependencies {
 
-	compile 'io.vertx:vertx-core:3.0.0-SNAPSHOT'
-	compile 'io.vertx:vertx-web:3.0.0-SNAPSHOT'
-	compile 'io.vertx:vertx-codegen:3.0.0-SNAPSHOT'
-	compile 'io.vertx:vertx-auth-common:3.0.0-SNAPSHOT'
+    compile 'io.vertx:vertx-core:3.0.0-SNAPSHOT'
+    compile 'io.vertx:vertx-web:3.0.0-SNAPSHOT'
+    compile 'io.vertx:vertx-codegen:3.0.0-SNAPSHOT'
+    compile 'io.vertx:vertx-auth-common:3.0.0-SNAPSHOT'
     compile 'org.codehaus.groovy:groovy-templates:2.4.3'
 		
     testCompile group: 'io.vertx', name: 'vertx-core', version: '3.0.0-SNAPSHOT', classifier: 'tests'
